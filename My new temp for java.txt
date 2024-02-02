@@ -1,0 +1,88 @@
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import static java.lang.Math.max;
+import static java.lang.Math.min;
+import static java.lang.Math.abs;
+
+public class Main {
+    static class Reader{
+        BufferedReader br;
+        StringTokenizer st;
+        public Reader(boolean f) throws IOException{
+            if(f) {
+                br = new BufferedReader(new FileReader("input.txt"));
+            }else{
+                br=new BufferedReader(new InputStreamReader(System.in));
+            }
+        }
+        String next(){
+            while(st==null || !st.hasMoreTokens()){
+                try {
+                    st=new StringTokenizer(br.readLine());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return st.nextToken();
+        }
+        int nextInt(){
+            return Integer.parseInt(next());
+        }
+        long nextLong(){
+            return Long.parseLong(next());
+        }
+        double nextDouble(){
+            return Double.parseDouble(next());
+        }
+        String nextLine(){
+            String str="";
+            try {
+                str=br.readLine().trim();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return str;
+        }
+    }
+    static class Writer {
+        private final BufferedWriter bw;
+
+        public Writer(boolean f) throws IOException {
+            if(f) {
+                this.bw = new BufferedWriter(new FileWriter("output.txt"));
+            }else{
+                this.bw = new BufferedWriter(new OutputStreamWriter(System.out));
+            }
+        }
+
+        public void print(Object object) throws IOException {
+            bw.append("" + object);
+        }
+
+        public void println(Object object) throws IOException {
+            print(object);
+            bw.append("\n");
+        }
+
+        public void close() throws IOException {
+            bw.close();
+        }
+    }
+    public static void main(String[] args){
+        try {
+            Reader in=new Reader(true);
+            Writer out =new Writer(true);
+            int t = 1;
+            t=in.nextInt();
+            while(t-- > 0){
+                // write code here
+                
+            }
+            out.close();
+        } catch (Exception e) {
+            return;
+        }
+    }
+}
